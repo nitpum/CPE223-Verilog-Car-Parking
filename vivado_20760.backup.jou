@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Sun Nov 25 16:57:16 2018
+# Process ID: 20760
+# Current directory: C:/Users/lukki/Desktop/Vivado/Lab8
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10336 C:\Users\lukki\Desktop\Vivado\Lab8\Lab8.xpr
+# Log file: C:/Users/lukki/Desktop/Vivado/Lab8/vivado.log
+# Journal file: C:/Users/lukki/Desktop/Vivado/Lab8\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lukki/Desktop/Vivado/Lab8/Lab8.xpr
+update_compile_order -fileset sources_1
+create_project Project C:/Users/lukki/Desktop/Vivado/Project -part xc7a12ticsg325-1L
+file mkdir C:/Users/lukki/Desktop/Vivado/Project/Project.srcs/sources_1/new
+close [ open C:/Users/lukki/Desktop/Vivado/Project/Project.srcs/sources_1/new/led.v w ]
+add_files C:/Users/lukki/Desktop/Vivado/Project/Project.srcs/sources_1/new/led.v
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse C:/Users/lukki/Desktop/Vivado/Lab8/Basys3_Master.xdc
+current_project Lab8
+current_project Project
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+current_project Lab8
+close_project
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
