@@ -21,12 +21,12 @@
 
 
 module display(
-    input clk,
-    input [6:0] seg, 
+    input clk, 
     input [6:0] seg1,
     input [6:0] seg2,
     input [6:0] seg3,
     input [6:0] seg4,
+    output reg [6:0] seg,
     output reg [3:0] ano
     );
     wire [1:0] led_actived_counter;
@@ -38,15 +38,19 @@ module display(
         case (led_actived_counter)
             2'b00 : begin // Deactive LED2, LED3, LED4
                     ano = 4'b0111;
+                    seg <= seg1;
                 end
             2'b01 : begin // Deactive LED1, LED3, LED4
                     ano = 4'b1011;
+                    seg <= seg2;
                 end
             2'b10 : begin
                     ano = 4'b1101; // Deactive LED1, LED2, LED4
+                    seg <= seg3;
                 end
             2'b11 : begin
                     ano = 4'b1110; // Deactive LED1, LED2, LED3
+                    seg <= seg4;
                 end
         endcase
     end
