@@ -36,6 +36,7 @@ module decoder(
     divider(clk, slclk);
     initial run=0;
     initial led=0;
+    initial JCC=0;
 //    always @(*)
 //        begin
 //            if(JCC[0]==1) led[0]=1;
@@ -49,10 +50,10 @@ module decoder(
 //            if(JCC[4]==1) led[4]=1;          
 //        end
 
-    initial JCC = 1;
-    always @(posedge slclk) begin
-        case(JCC)
-            4'b0001: begin
+//    initial JCC = 1;
+//    always @(posedge slclk) begin
+//        case(JCC)
+//            4'b0001: begin
 //                case(JC)
 //                    4'b0001: led = 16'b0000_0000_0100_0000; //6
 //                    4'b0010: led = 16'b0000_0001_0000_0000; //8
@@ -61,94 +62,94 @@ module decoder(
 //                    default: led = 0; 
 //                endcase
 //                if(led==0)
-                case(JC)
-                    4'b0001: out = 6; //6
-                    4'b0010: out = 8; //8
-                    4'b0100: out = 5; //5
-                    4'b1000: out = 7; //7
-                    default: out = 0; 
-                endcase
-                JCC = 4'b0010;
-            end
-            4'b0010: begin
-                case(JC)
-                    4'b0001: led = 16'b0000_0000_0000_0100;
-                    4'b0010: led = 16'b0000_0000_0001_0000;
-                    4'b0100: led = 16'b0000_0000_0000_0010;
-                    4'b1000: led = 16'b0000_0000_0000_1000;
-                    default: led = 0;
-                endcase
-                if(led==0)
-                JCC = 4'b0100;
-            end
-            4'b0100: begin
-                case(JC)
-                    4'b0001: led = 16'b0100_0000_0000_0000;
-                    4'b0010: led = 16'b1000_0000_0000_0001;
-                    4'b0100: led = 16'b0010_0000_0000_0000;
-                    4'b1000: led = 16'b1000_0000_0000_0000;
-                    default: led = 0;
-                endcase
-                if(led==0)
-                JCC = 4'b1000;
-            end
-            4'b1000: begin
-                case(JC)
-                    4'b0001: led = 16'b0000_0100_0000_0000;
-                    4'b0010: led = 16'b0001_0000_0000_0000;
-                    4'b0100: led = 16'b0000_0010_0000_0000;
-                    4'b1000: led = 16'b0000_1000_0000_0000;
-                    default: led = 0;
-                endcase
-                if(led==0)
-                JCC = 4'b0001;
-            end
-            default : begin
-                led=0;
-            end
-        endcase
-        out=led;
-    end
-
-//    always @(posedge slclk)
-//    begin
-//        led=0;
-//        JCC[run]=1;
-//        if(JC[0]==0)
-//        begin
-//            if(run==0) out=6;
-//            if(run==1) out=2;
-//            //if(run==2) out=14;
-//            //if(run==3) out=10;
-//        end
-//        if(JC[1]==0)
-//        begin
-//            if(run==0) out=8;
-//            if(run==1) out=4;
-//            //if(run==2) out=16;
-//            //if(run==3) out=12;
-//        end
-//        if(JC[2]==0)
-//        begin
-//            if(run==0) out=5;
-//            if(run==1) out=1;
-//            //if(run==2) out=13;
-//            if(run==3) out=9;
-//        end
-//        if(JC[3]==0)
-//        begin
-//            if(run==0) out=7;
-//            if(run==1) out=3;
-//            //if(run==2) out=15;
-//            //if(run==3) out=11; 
-//        end
-//        JCC[run]=1;
-//         if(run<=3)
-//            run=run+1;
-//         else
-//            run=0;
+//                case(JC)
+//                    4'b0001: out = 6; //6
+//                    4'b0010: out = 8; //8
+//                    4'b0100: out = 5; //5
+//                    4'b1000: out = 7; //7
+//                    default: out = 0; 
+//                endcase
+//                JCC = 4'b0010;
+//            end
+//            4'b0010: begin
+//                case(JC)
+//                    4'b0001: led = 16'b0000_0000_0000_0100;
+//                    4'b0010: led = 16'b0000_0000_0001_0000;
+//                    4'b0100: led = 16'b0000_0000_0000_0010;
+//                    4'b1000: led = 16'b0000_0000_0000_1000;
+//                    default: led = 0;
+//                endcase
+//                if(led==0)
+//                JCC = 4'b0100;
+//            end
+//            4'b0100: begin
+//                case(JC)
+//                    4'b0001: led = 16'b0100_0000_0000_0000;
+//                    4'b0010: led = 16'b1000_0000_0000_0001;
+//                    4'b0100: led = 16'b0010_0000_0000_0000;
+//                    4'b1000: led = 16'b1000_0000_0000_0000;
+//                    default: led = 0;
+//                endcase
+//                if(led==0)
+//                JCC = 4'b1000;
+//            end
+//            4'b1000: begin
+//                case(JC)
+//                    4'b0001: led = 16'b0000_0100_0000_0000;
+//                    4'b0010: led = 16'b0001_0000_0000_0000;
+//                    4'b0100: led = 16'b0000_0010_0000_0000;
+//                    4'b1000: led = 16'b0000_1000_0000_0000;
+//                    default: led = 0;
+//                endcase
+//                if(led==0)
+//                JCC = 4'b0001;
+//            end
+//            default : begin
+//                led=0;
+//            end
+//        endcase
+//        out=led;
 //    end
-    always @(out)
+    
+    always @(posedge slclk)
+    begin
+        led=0;
+        JCC[run]=0;
+        if(JC[0]==0)
+        begin
+            if(run==0) led[6]=1;
+            if(run==1) led[2]=1;
+            if(run==2) led[14]=1;
+            if(run==3) led[10]=1;
+        end
+        if(JC[1]==0)
+        begin
+            if(run==0) led[8]=1;
+            if(run==1) led[4]=1;
+            if(run==2) led[0]=1;
+            if(run==3) led[12]=1;
+        end
+        if(JC[2]==0)
+        begin
+            if(run==0) led[5]=1;
+            if(run==1) led[1]=1;
+            if(run==2) led[13]=1;
+            if(run==3) led[9]=1;
+        end
+        if(JC[3]==0)
+        begin
+            if(run==0) led[7]=1;
+            if(run==1) led[3]=1;
+            if(run==2) led[15]=1;
+            if(run==3) led[11]=1; 
+        end
+        JCC[run]=1;
+         if(run<=3)
+            run=run+1;
+         else
+            run=0;
+    end
+    always @(out && slclk)
     begin
      case(out)
         4'b0000: seg=~7'b0111111;
