@@ -34,23 +34,24 @@ module display(
     always @ (posedge clk) begin
         refresh_counter <= refresh_counter + 1;
     end
+    assign led_actived_counter = refresh_counter[19:18];
     always @ (*) begin
         case (led_actived_counter)
             2'b00 : begin // Deactive LED2, LED3, LED4
                     ano = 4'b0111;
-                    seg <= seg1;
+                    seg = seg1;
                 end
             2'b01 : begin // Deactive LED1, LED3, LED4
                     ano = 4'b1011;
-                    seg <= seg2;
+                    seg = seg2;
                 end
             2'b10 : begin
                     ano = 4'b1101; // Deactive LED1, LED2, LED4
-                    seg <= seg3;
+                    seg = seg3;
                 end
             2'b11 : begin
                     ano = 4'b1110; // Deactive LED1, LED2, LED3
-                    seg <= seg4;
+                    seg = seg4;
                 end
         endcase
     end
