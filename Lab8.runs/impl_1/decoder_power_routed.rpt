@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sun Dec  9 13:10:48 2018
+| Date             : Sun Dec  9 18:48:50 2018
 | Host             : Arm-Surface running 64-bit major release  (build 9200)
 | Command          : report_power -file decoder_power_routed.rpt -pb decoder_power_summary_routed.pb -rpx decoder_power_routed.rpx
 | Design           : decoder
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.083        |
+| Total On-Chip Power (W)  | 0.088        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.011        |
+| Dynamic (W)              | 0.016        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.6         |
@@ -53,16 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |       92 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       22 |     20800 |            0.11 |
-|   Register     |    <0.001 |       48 |     41600 |            0.12 |
+| Slice Logic    |    <0.001 |      220 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       79 |     20800 |            0.38 |
+|   Register     |    <0.001 |       96 |     41600 |            0.23 |
 |   CARRY4       |    <0.001 |        7 |      8150 |            0.09 |
-|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |    <0.001 |       70 |       --- |             --- |
-| I/O            |     0.010 |       25 |       106 |           23.58 |
+| Signals        |    <0.001 |      164 |       --- |             --- |
+| I/O            |     0.014 |       25 |       106 |           23.58 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.083 |          |           |                 |
+| Total          |     0.088 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.011 |       0.001 |      0.010 |
-| Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
-| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
+| Vccint    |       1.000 |     0.012 |       0.002 |      0.010 |
+| Vccaux    |       1.800 |     0.013 |       0.001 |      0.013 |
+| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -138,11 +137,28 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| decoder          |     0.011 |
-|   nolabel_line29 |    <0.001 |
-+------------------+-----------+
++--------------------+-----------+
+| Name               | Power (W) |
++--------------------+-----------+
+| decoder            |     0.016 |
+|   nolabel_line29   |    <0.001 |
+|   nolabel_line31   |     0.001 |
+|     nolabel_line46 |    <0.001 |
+|     nolabel_line47 |    <0.001 |
+|     nolabel_line48 |    <0.001 |
+|     nolabel_line49 |    <0.001 |
+|     nolabel_line51 |    <0.001 |
+|     nolabel_line52 |    <0.001 |
+|     nolabel_line53 |    <0.001 |
+|     nolabel_line54 |    <0.001 |
+|     nolabel_line56 |    <0.001 |
+|     nolabel_line57 |    <0.001 |
+|     nolabel_line58 |    <0.001 |
+|     nolabel_line59 |    <0.001 |
+|     nolabel_line61 |    <0.001 |
+|     nolabel_line62 |    <0.001 |
+|     nolabel_line63 |    <0.001 |
+|     nolabel_line64 |    <0.001 |
++--------------------+-----------+
 
 

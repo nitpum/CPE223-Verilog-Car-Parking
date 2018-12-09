@@ -27,11 +27,11 @@ module divider(
     reg [27:0] counter;
     initial counter = 0;
     always @(posedge in) begin
-        if(counter == 100_000_00) counter = 0;
+        if(counter == 100_000) counter = 0;
         else counter = counter + 1;
     end
     always @(counter) begin
-        if(counter == 100_000_00) out = 1;
+        if(counter == 100_000) out = 1;
         else out = 0;
     end
 endmodule

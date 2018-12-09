@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Dec  9 13:10:19 2018
+| Date         : Sun Dec  9 18:48:21 2018
 | Host         : Arm-Surface running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file decoder_control_sets_placed.rpt
 | Design       : decoder
@@ -23,7 +23,7 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     4 |
+| Number of unique control sets                            |    19 |
 | Unused register locations in slices containing registers |     8 |
 +----------------------------------------------------------+-------+
 
@@ -35,8 +35,8 @@ Table of Contents
 | Fanout | Control Sets |
 +--------+--------------+
 |      2 |            1 |
-|      8 |            1 |
-|    16+ |            2 |
+|      8 |           17 |
+|    16+ |            1 |
 +--------+--------------+
 
 
@@ -51,20 +51,35 @@ Table of Contents
 | No           | Yes                   | No                     |              54 |            7 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              32 |            4 |
+| Yes          | Yes                   | No                     |             128 |           17 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-----------------+------------------+------------------+----------------+
-|  Clock Signal  |  Enable Signal  | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+----------------+-----------------+------------------+------------------+----------------+
-|  clk_IBUF_BUFG |                 |                  |                1 |              2 |
-|  n_0_30_BUFG   |                 |                  |                1 |              8 |
-|  n_0_30_BUFG   | led[15]_i_2_n_1 | led[15]_i_1_n_1  |                4 |             32 |
-|  clk_IBUF_BUFG |                 | n_0_30_BUFG      |                7 |             54 |
-+----------------+-----------------+------------------+------------------+----------------+
++----------------------------------+--------------------------------------------+-------------------------------------+------------------+----------------+
+|           Clock Signal           |                Enable Signal               |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++----------------------------------+--------------------------------------------+-------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG                   |                                            |                                     |                1 |              2 |
+|  nolabel_line29/counter_reg[1]_0 |                                            |                                     |                1 |              8 |
+|  nolabel_line31/Q[0]             | nolabel_line31/nolabel_line47/counter0_n_0 | nolabel_line31/nolabel_line62/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[0]             | nolabel_line31/nolabel_line46/sel          | nolabel_line31/nolabel_line61/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[0]             | nolabel_line31/nolabel_line48/counter0_n_0 | nolabel_line31/nolabel_line63/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[0]             | nolabel_line31/nolabel_line49/counter0_n_0 | nolabel_line31/nolabel_line64/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[1]             | nolabel_line31/nolabel_line51/counter0_n_0 | nolabel_line31/nolabel_line61/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[1]             | nolabel_line31/nolabel_line52/counter0_n_0 | nolabel_line31/nolabel_line62/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[1]             | nolabel_line31/nolabel_line54/counter0_n_0 | nolabel_line31/nolabel_line64/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[1]             | nolabel_line31/nolabel_line53/counter0_n_0 | nolabel_line31/nolabel_line63/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[2]             | nolabel_line31/nolabel_line59/counter0_n_0 | nolabel_line31/nolabel_line64/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[2]             | nolabel_line31/nolabel_line56/counter0_n_0 | nolabel_line31/nolabel_line61/SR[0] |                2 |              8 |
+|  nolabel_line31/Q[2]             | nolabel_line31/nolabel_line57/counter0_n_0 | nolabel_line31/nolabel_line62/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[2]             | nolabel_line31/nolabel_line58/counter0_n_0 | nolabel_line31/nolabel_line63/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[3]             | nolabel_line31/nolabel_line62/counter0_n_0 | nolabel_line31/nolabel_line62/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[3]             | nolabel_line31/nolabel_line61/counter0_n_0 | nolabel_line31/nolabel_line61/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[3]             | nolabel_line31/nolabel_line63/counter0_n_0 | nolabel_line31/nolabel_line63/SR[0] |                1 |              8 |
+|  nolabel_line31/Q[3]             | nolabel_line31/nolabel_line64/counter0_n_0 | nolabel_line31/nolabel_line64/SR[0] |                1 |              8 |
+|  clk_IBUF_BUFG                   |                                            | nolabel_line29/counter_reg[1]_0     |                7 |             54 |
++----------------------------------+--------------------------------------------+-------------------------------------+------------------+----------------+
 
 
