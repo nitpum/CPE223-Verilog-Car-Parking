@@ -23,7 +23,7 @@
 module top_module(
     input clk,
     output reg [3:0] seg,
-    output reg [1:0] ano7seg
+    output reg [1:0] ano
     );
     wire [3:0] seg1;
     wire [3:0] seg3;
@@ -31,5 +31,5 @@ module top_module(
     bcdto7seg( 1, seg1);
     bcdto7seg( 3, seg3);
     bcdto7seg( 4, seg4);
-    display(clk, seg1, {0,0,0,0,0,1}, seg3, seg4, seg, ano7seg);
+    display(clk, seg1, {0,0,0,0,0,1}, seg3, seg4, seg, ano);
 endmodule
