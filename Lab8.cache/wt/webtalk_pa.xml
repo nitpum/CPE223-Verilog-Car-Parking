@@ -3,15 +3,9 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<<<<<<< Updated upstream
-<application name="pa" timeStamp="Mon Dec 10 20:50:29 2018">
-<section name="Project Information" visible="false">
-<property name="ProjectID" value="df4a2fc6c1f848a5b753669ab7b908f2" type="ProjectID"/>
-=======
 <application name="pa" timeStamp="Mon Dec 10 02:10:20 2018">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="2bbbd523e7e147a39021c7dc4345c9e2" type="ProjectID"/>
->>>>>>> Stashed changes
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
@@ -22,16 +16,6 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
-<<<<<<< Updated upstream
-<item name="Gui Handlers">
-<property name="CommandsInput_TYPE_TCL_COMMAND_HERE" value="3" type="GuiHandlerData"/>
-<property name="TclConsoleView_CLEAR_ALL_OUTPUT_IN_TCL_CONSOLE" value="1" type="GuiHandlerData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="31" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="24" type="TclMode"/>
-=======
 <item name="Java Command Handlers">
 <property name="AddSources" value="3" type="JavaHandler"/>
 </item>
@@ -48,7 +32,6 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="GuiMode" value="16" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="13" type="TclMode"/>
->>>>>>> Stashed changes
 </item>
 </section>
 </application>
