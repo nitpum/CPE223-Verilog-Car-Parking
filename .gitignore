@@ -87,3 +87,6 @@
 
 *.runs/
 Lab8.runs/
+*.cache/
+*.ip_user_files/
+*.sim/
