@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/08/2018 07:40:35 PM
+// Create Date: 12/09/2018 01:55:42 PM
 // Design Name: 
-// Module Name: divider
+// Module Name: debounce_btn
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,27 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module divider(
+module debounce_btn(
+    input clk,
     input in,
     output reg out
-    );
-    reg [27:0] counter;
+);
+    reg [3:0] counter;
     initial counter = 0;
-    always @(posedge in) begin
-        if(counter == 100_000) counter = 0;
-        else counter = counter + 1;
+    
+    always @(posedge clk) begin
+        if(in == 0) begin
+            counter = 0;
+        end
+        else begin
+            if(counter < 10) begin
+                counter = counter + 1;
+            end
+        end
     end
+    
     always @(counter) begin
-        if(counter == 100_000) out = 1;
+        if(counter == 10) out = 1;
         else out = 0;
     end
 endmodule
